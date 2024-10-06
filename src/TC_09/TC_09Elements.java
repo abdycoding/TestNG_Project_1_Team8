@@ -1,7 +1,6 @@
 package TC_09;
 
 import Utlity.BaseDriverGenel;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -117,6 +116,6 @@ public class TC_09Elements {
     public WebElement confirm_Button;
 
     @FindBy(css = ".float-sm-right > span")
-    public List<WebElement> idler;
+    public List<WebElement> patient_ids;
 
 }
