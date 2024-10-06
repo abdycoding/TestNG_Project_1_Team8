@@ -2,7 +2,6 @@ package TC_09;
 
 import Utlity.BaseDriverGenel;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -107,7 +106,7 @@ public class TC_09 extends BaseDriverGenel {
 
         tc.confirm_Button.click();
 
-        Assert.assertEquals(tc.idler.get(0).getText(), idler.get(0), "The ids are not equal");
-        Assert.assertEquals(tc.idler.get(1).getText(), idler.get(1), "The ids are not equal");
+        Assert.assertEquals(tc.patient_ids.get(0).getText(), idler.get(0), "The ids are not equal");
+        Assert.assertEquals(tc.patient_ids.get(1).getText(), idler.get(1), "The ids are not equal");
     }
 }
