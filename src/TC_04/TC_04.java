@@ -13,76 +13,77 @@ public class TC_04 extends BaseDriverGenel {
 
     @Test
     public void patientRegistration() {
-        TC_04Elements lgo = new TC_04Elements();
+        TC_04Elements pR = new TC_04Elements();
 
         driver.get("https://openmrs.org/demo/");
         driver.manage().window().maximize();
-        lgo.dropdown.click();
-        wait.until(ExpectedConditions.elementToBeClickable(lgo.englishlang));
-        lgo.englishlang.click();
+        pR.dropdown.click();
+        wait.until(ExpectedConditions.elementToBeClickable(pR.englishlang));
+        pR.englishlang.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(lgo.entTheMRS2Demo));
-        lgo.entTheMRS2Demo.click();
+        wait.until(ExpectedConditions.elementToBeClickable(pR.entTheMRS2Demo));
+        pR.entTheMRS2Demo.click();
 
-        lgo.userName.sendKeys("admin");
-        lgo.eye.click();
-        lgo.password.sendKeys("Admin123");
-        lgo.pharmacy.click();
-        lgo.login_Button.click();
-        lgo.regapatient.click();
+        pR.userName.sendKeys("admin");
+        pR.eye.click();
+        pR.password.sendKeys("Admin123");
+        pR.pharmacy.click();
+        pR.login_Button.click();
+        pR.regapatient.click();
 
-        lgo.givenName.sendKeys("Jane");
-        lgo.middleName.sendKeys("Annie");
-        lgo.familyName.sendKeys("Parker");
-        lgo.nxtButton.click();
+        pR.givenName.sendKeys("Jane");
+        pR.middleName.sendKeys("Annie");
+        pR.familyName.sendKeys("Parker");
+        pR.nxtButton.click();
 
-        lgo.femaleopt.click();
-        lgo.nxtButton.click();
+        pR.femaleopt.click();
+        pR.nxtButton.click();
 
-        lgo.birthdateDay.click();
-        lgo.birthdateDay.sendKeys("20");
-        lgo.birthdateMonth.click();
+        pR.birthdateDay.click();
+        pR.birthdateDay.sendKeys("20");
+        pR.birthdateMonth.click();
         WebElement birthdateMonth = driver.findElement(By.xpath("//select[@name='birthdateMonth']"));
         Select selectMonth= new Select(birthdateMonth);
         selectMonth.selectByValue("8");
-        lgo.birthdateYear.click();
-        lgo.birthdateYear.sendKeys("1985");
-        lgo.nxtButton.click();
+        pR.birthdateYear.click();
+        pR.birthdateYear.sendKeys("1985");
+        pR.nxtButton.click();
 
-        lgo.address1.click();
-        lgo.address1.sendKeys("456 Oak St. Dallas, TX");
-        lgo.city.click();
-        lgo.city.sendKeys("Dallas");
-        lgo.state.click();
-        lgo.state.sendKeys("Texas");
-        lgo.country.click();
-        lgo.country.sendKeys("USA");
-        lgo.postalCode.click();
-        lgo.postalCode.sendKeys("45687");
-        lgo.nxtButton.click();
+        pR.address1.click();
+        pR.address1.sendKeys("456 Oak St. Dallas, TX");
+        pR.city.click();
+        pR.city.sendKeys("Dallas");
+        pR.state.click();
+        pR.state.sendKeys("Texas");
+        pR.country.click();
+        pR.country.sendKeys("USA");
+        pR.postalCode.click();
+        pR.postalCode.sendKeys("45687");
+        pR.nxtButton.click();
 
-        lgo.phoneNumber.click();
-        lgo.phoneNumber.sendKeys("5552345678");
-        lgo.nxtButton.click();
+        pR.phoneNumber.click();
+        pR.phoneNumber.sendKeys("5552345678");
+        pR.nxtButton.click();
 
-        lgo.slctRelation.click();
+        pR.slctRelation.click();
         WebElement slctRelation = driver.findElement(By.xpath("//select[@id='relationship_type']"));
         Select selectRelationType = new Select(slctRelation);
         selectRelationType.selectByIndex(3);
-        lgo.personName.click();
-        lgo.personName.sendKeys("John Doe");
-        lgo.plusBtn.click();
-        lgo.slctRelation2.click();
+        pR.personName.click();
+        pR.personName.sendKeys("John Doe");
+        pR.plusBtn.click();
+        pR.slctRelation2.click();
         WebElement slctRelation2 = driver.findElement(By.xpath("//select[@id='relationship_type']"));
         Select selectRelationType2 = new Select(slctRelation2);
         selectRelationType.selectByIndex(7);
-        lgo.personName.click();
-        lgo.personName.sendKeys("Olivia Johnson");
-        lgo.nxtButton.click();
+        pR.personName.click();
+        pR.personName.sendKeys("Olivia Johnson");
+        pR.nxtButton.click();
 
-        lgo.confirm.click();
+        pR.confirm.click();
 
-        //Assert.assertTrue();
+        WebElement personName = driver.findElement(By.xpath("//h1[@class='mt-0 mb-2 name']"));
+        Assert.assertTrue(personName != pR.prsnNameVerification, "Patient registration couldn't be made");
 
     }
 }
