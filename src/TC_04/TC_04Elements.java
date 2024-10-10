@@ -93,7 +93,7 @@ public class TC_04Elements {
     @FindBy (id = "submit")
     public WebElement confirm;
 
-    @FindBy (xpath = "//span[@class='PersonName-givenName']")
+    @FindBy (xpath = "//h1[@class='mt-0 mb-2 name']")
     public WebElement prsnNameVerification;
 
 }
