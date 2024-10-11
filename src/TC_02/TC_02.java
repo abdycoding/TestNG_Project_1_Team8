@@ -26,7 +26,6 @@ public class TC_02 extends BaseDriverGenel {
         tc.username.sendKeys("Admin");
         tc.password.sendKeys("Admin123");
         tc.inpatientWard.click();
-
         tc.login.click();
 
     }

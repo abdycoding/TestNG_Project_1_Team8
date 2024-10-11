@@ -37,5 +37,4 @@ public class TC_02Elements  {
 
     @FindBy(xpath="//*[@id='loginButton']")
     public WebElement login;
-
 }

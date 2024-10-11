@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import static Utlity.BaseDriverGenel.driver;
 
+
 public class TC_01Elements {
     public TC_01Elements(){
         PageFactory.initElements(driver, this);

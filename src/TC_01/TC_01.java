@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+//public static JavascriptExecutor tx;
 
 
 public class TC_01 extends BaseDriverGenel {
@@ -29,7 +30,7 @@ public class TC_01 extends BaseDriverGenel {
         wait.until(ExpectedConditions.elementToBeClickable(tc.openMRS2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(tc.openMRS2Demo)).click();
 
-        tx.executeScript("arguments[0].click();",tc.openMRS2Demo);
+//        tx.executeScript("arguments[0].click();",tc.openMRS2Demo);
         wait.until(ExpectedConditions.urlContains("login"));
     }
 
