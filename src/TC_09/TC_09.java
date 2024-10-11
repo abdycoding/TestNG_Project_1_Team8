@@ -1,6 +1,8 @@
 package TC_09;
 
 import Utlity.BaseDriverGenel;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -11,14 +13,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TC_09 extends BaseDriverGenel {
-
+    public static Logger addLog= LogManager.getLogger();
     @Test
     public void Test_09() {
+        addLog.info("the user navigated to the website");
         driver.get("https://demo.openmrs.org/");
         driver.manage().window().maximize();
 
 
         TC_09Elements tc = new TC_09Elements();
+        addLog.info("the element is created from the Elements class");
 
         tc.username.sendKeys("Admin");
         tc.password.sendKeys("Admin123");
@@ -56,7 +60,7 @@ public class TC_09 extends BaseDriverGenel {
 
         List<String> idler = new ArrayList<>();
         idler.add(tc.patient_id.getText());
-
+        addLog.warn("here we should add the ids to the List so we can call it later");
         tc.home.click();
 
         tc.register_Patient.click();
@@ -88,9 +92,10 @@ public class TC_09 extends BaseDriverGenel {
         tc.next_Button.click();
         tc.confirm.click();
         idler.add(tc.patient_id.getText());
-
+        addLog.info("we added the second id to the list");
         tc.home.click();
 
+        addLog.info("the merging process is started");
         tc.dataManagement.click();
         tc.merge.click();
 
@@ -103,10 +108,11 @@ public class TC_09 extends BaseDriverGenel {
         tc.firstPatient.click();
 
         Assert.assertTrue(tc.headline1.getText().contains("Merging cannot be undone!"));
-
+        addLog.info("the verification process is done here");
         tc.confirm_Button.click();
 
-        Assert.assertEquals(tc.patient_ids.get(0).getText(), idler.get(0), "The ids are not equal");
-        Assert.assertEquals(tc.patient_ids.get(1).getText(), idler.get(1), "The ids are not equal");
+        Assert.assertEquals(tc.patient_ids.get(0).getText(), idler.get(1), "The ids are not equal");
+        Assert.assertEquals(tc.patient_ids.get(1).getText(), idler.get(0), "The ids are not equal");
+        addLog.info("the logging process is finished");
     }
 }
