@@ -9,7 +9,6 @@ public class TC_02 extends BaseDriverGenel {
 
     @Test
     public void Test_02() {
-
         driver.get("https://openmrs.org");
         driver.manage().window().maximize();
 

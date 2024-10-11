@@ -17,14 +17,14 @@ import java.time.Duration;
 public class BaseDriverGenel {
     public static WebDriver driver;
     public static WebDriverWait wait;
-    public static JavascriptExecutor js;
+    public static JavascriptExecutor tx;
 
     @BeforeClass
     public void BaslangicIslemleri(){
        // System.out.println("Başlangıç işlemleri yapılıyor");
 
         driver=new ChromeDriver();
-        js = (JavascriptExecutor) driver;
+        tx = (JavascriptExecutor) driver;
 
         //driver.manage().window().maximize(); // Ekranı max yapıyor.
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 20 sn mühlet: sayfayı yükleme mühlet
