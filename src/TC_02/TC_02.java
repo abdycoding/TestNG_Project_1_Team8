@@ -1,6 +1,6 @@
 package TC_02;
 
-import TC_01.TC_01Elements;
+//import TC_01.TC_01Elements;
 import Utlity.BaseDriverGenel;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
@@ -9,7 +9,6 @@ public class TC_02 extends BaseDriverGenel {
 
     @Test
     public void Test_02() {
-
         driver.get("https://openmrs.org");
         driver.manage().window().maximize();
 

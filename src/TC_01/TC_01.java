@@ -28,10 +28,9 @@ public class TC_01 extends BaseDriverGenel {
         wait.until(ExpectedConditions.elementToBeClickable(tc.demo)).click();
         wait.until(ExpectedConditions.elementToBeClickable(tc.openMRS2)).click();
         wait.until(ExpectedConditions.elementToBeClickable(tc.openMRS2Demo)).click();
-
+        JavascriptExecutor tx=(JavascriptExecutor)driver;
         tx.executeScript("arguments[0].click();",tc.openMRS2Demo);
         wait.until(ExpectedConditions.urlContains("login"));
-
     }
 
     @Test(dataProvider = "userData", dependsOnMethods = {"Test01"})
@@ -69,5 +68,3 @@ public class TC_01 extends BaseDriverGenel {
     }
 
 }
-
-
