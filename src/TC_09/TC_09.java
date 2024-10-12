@@ -20,7 +20,6 @@ public class TC_09 extends BaseDriverGenel {
         driver.get("https://demo.openmrs.org/");
         driver.manage().window().maximize();
 
-
         TC_09Elements tc = new TC_09Elements();
         addLog.info("the element is created from the Elements class");
 
